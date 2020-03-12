@@ -87,7 +87,9 @@ public class IdealGasSceneMaster : MonoBehaviour {
 
         CalculateAndSetSpeeds(m, T, N, divs, vp);
 
-        
+        //creating NewSlider
+        temp_slider = new NewSlider();
+        box_slider = new NewSlider();
 
         //Add listeners
         //disable input_field input
