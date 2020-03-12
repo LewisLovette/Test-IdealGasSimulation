@@ -88,8 +88,8 @@ public class IdealGasSceneMaster : MonoBehaviour {
         CalculateAndSetSpeeds(m, T, N, divs, vp);
 
         //creating NewSlider
-        temp_slider = new NewSlider();
-        box_slider = new NewSlider();
+        //temp_slider = new NewSlider();
+        //box_slider = new NewSlider();
 
         //Add listeners
         //disable input_field input
@@ -125,7 +125,9 @@ public class IdealGasSceneMaster : MonoBehaviour {
             count++;
         }
         //update should continually set the text field/input field values for volume and temperature based upon the slider values
+
         Debug.Log(temp_slider.value.ToString("F0"));
+
         temp_input.text = temp_slider.value.ToString("F0");
         float l = box_slider.value;
         volume_input.text = (l * l * l).ToString("F2");
