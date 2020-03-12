@@ -121,7 +121,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
         //try a few times to ensure that particle speeds are setup properly, but then stop updating
         if (count < 5)
         {
-            //SetParticleSpeeds(N, vp);       //try just looping this 5 times in the start function?!
+            SetParticleSpeeds(N, vp);       //try just looping this 5 times in the start function?!
             count++;
         }
         //update should continually set the text field/input field values for volume and temperature based upon the slider values
