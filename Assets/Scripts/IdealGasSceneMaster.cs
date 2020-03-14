@@ -74,6 +74,12 @@ public class IdealGasSceneMaster : MonoBehaviour {
         n_mol = 1f;
         T = 500;                        //temperature starting value
         temp_input.text = "500";
+        //-LL setup
+        volume_input.text = "1000";
+        pressure_input.text = "11111";
+        num_mol_input.text = n_mol.ToString();
+        particle_mass_input.text = "1";
+        //
         m = 12*amu;             //carbon atoms mass 12amu - default setting
         vp = Mathf.Sqrt(2 * k * T / m);
         N = (int)(1000f * n_mol);                       //simulate 1000 particles for every mole of gas
@@ -89,10 +95,8 @@ public class IdealGasSceneMaster : MonoBehaviour {
         CalculateAndSetSpeeds(m, T, N, divs, vp);
 
         //creating NewSlider
-        temp_slider = new NewSlider();
-        box_slider = new NewSlider();
-        temp_slider.SetWithCallback(25, true);
-        box_slider.SetWithCallback(25, true);
+        temp_slider.SetWithCallback(25, false);
+        box_slider.SetWithCallback(25, false);
 
         //Add listeners
         //disable input_field input
@@ -124,6 +128,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
         //try a few times to ensure that particle speeds are setup properly, but then stop updating
         if (count < 5)
         {
+            //Debug.Log("For SetParticleSpeeds: N=" + N + "  vp=" + vp);
             SetParticleSpeeds(N, vp);       //try just looping this 5 times in the start function?!
             count++;
         }
@@ -151,7 +156,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
     private void SetParticleSpeeds(int N, float vp)
     {
         //get all the particles in the particle system and add them to the array particles
-        IdealGasParticlesSystem.GetParticles(particles);
+        //IdealGasParticlesSystem.GetParticles(particles);
        
         int num_particle_speeds = particle_speeds.Count;
         
