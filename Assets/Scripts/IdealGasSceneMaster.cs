@@ -88,8 +88,8 @@ public class IdealGasSceneMaster : MonoBehaviour {
         CalculateAndSetSpeeds(m, T, N, divs, vp);
 
         //creating NewSlider
-        //temp_slider = new NewSlider();
-        //box_slider = new NewSlider();
+        temp_slider = new NewSlider();
+        box_slider = new NewSlider();
 
         //Add listeners
         //disable input_field input
@@ -116,7 +116,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
     //Only
 	void Update () {
         //Counting # of particles for debug
-        Debug.Log(count);
+        //Debug.Log(count);
 
         //try a few times to ensure that particle speeds are setup properly, but then stop updating
         if (count < 5)
@@ -126,7 +126,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
         }
         //update should continually set the text field/input field values for volume and temperature based upon the slider values
 
-        Debug.Log(temp_slider.value.ToString("F0"));
+        //Debug.Log(temp_slider.value.ToString("F0"));
 
         temp_input.text = temp_slider.value.ToString("F0");
         float l = box_slider.value;
@@ -447,6 +447,9 @@ public class IdealGasSceneMaster : MonoBehaviour {
         float vrms = Mathf.Sqrt(3f / 2f) * vp;
         float vavg = (2f / Mathf.Sqrt(Mathf.PI)) * vp;
         //output to UI
+        
+        Debug.Log(vp_text_pro.text);
+
         vp_text_pro.text = vp.ToString("F2") + " m/s";
         vrms_text_pro.text = vrms.ToString("F2") + " m/s";
         vavg_text_pro.text = vavg.ToString("F2") + " m/s";

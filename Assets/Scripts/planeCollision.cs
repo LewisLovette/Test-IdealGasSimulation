@@ -6,7 +6,7 @@ public class planeCollision : MonoBehaviour
 {
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log(name+" hit "+other.name);
+        //Debug.Log(name+" hit "+other.name);
 
     }
 }
