@@ -8,11 +8,11 @@ public class planeCollision : MonoBehaviour
     {
         if(other.name == "Particle System")
         {
-            Debug.Log("SELF HIT");
+            //Debug.Log("SELF HIT");
             
-            other.transform.position = new Vector3(0, 0, 0);
+            //other.transform.position = new Vector3(0, 0, 0);
         }
-        Debug.Log(name+" hit "+other.name);
+        //Debug.Log(name+" hit "+other.name);
 
     }
 }

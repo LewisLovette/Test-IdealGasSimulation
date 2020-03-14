@@ -126,7 +126,6 @@ public class IdealGasSceneMaster : MonoBehaviour {
 	void Update () {
         //Counting # of particles for debug
         //Debug.Log(count);
-        Debug.Log(temp_slider.value.ToString("F0"));
         //try a few times to ensure that particle speeds are setup properly, but then stop updating
         if (count < 5)
         {
