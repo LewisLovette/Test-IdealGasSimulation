@@ -96,6 +96,8 @@ public class IdealGasSceneMaster : MonoBehaviour {
 
         //creating NewSlider
         temp_slider.SetWithCallback(25, false);
+        temp_slider.value = T;
+        
         box_slider.SetWithCallback(25, false);
 
         //Add listeners
@@ -124,7 +126,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
 	void Update () {
         //Counting # of particles for debug
         //Debug.Log(count);
-
+        Debug.Log(temp_slider.value.ToString("F0"));
         //try a few times to ensure that particle speeds are setup properly, but then stop updating
         if (count < 5)
         {
@@ -156,7 +158,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
     private void SetParticleSpeeds(int N, float vp)
     {
         //get all the particles in the particle system and add them to the array particles
-        //IdealGasParticlesSystem.GetParticles(particles);
+        IdealGasParticlesSystem.GetParticles(particles);
        
         int num_particle_speeds = particle_speeds.Count;
         

@@ -6,7 +6,13 @@ public class planeCollision : MonoBehaviour
 {
     private void OnParticleCollision(GameObject other)
     {
-        //Debug.Log(name+" hit "+other.name);
+        if(other.name == "Particle System")
+        {
+            Debug.Log("SELF HIT");
+            
+            other.transform.position = new Vector3(0, 0, 0);
+        }
+        Debug.Log(name+" hit "+other.name);
 
     }
 }
