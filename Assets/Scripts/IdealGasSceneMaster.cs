@@ -94,11 +94,9 @@ public class IdealGasSceneMaster : MonoBehaviour {
 
         CalculateAndSetSpeeds(m, T, N, divs, vp);
 
-        //creating NewSlider
-        temp_slider.SetWithCallback(25, false);
-        temp_slider.value = T;
-        
-        box_slider.SetWithCallback(25, false);
+        ////creating NewSlider
+        //temp_slider.SetWithCallback(T, false);    
+        //box_slider.SetWithCallback(25, true);
 
         //Add listeners
         //disable input_field input
