@@ -82,6 +82,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
         //particles = new ParticleSystem.Particle[IdealGasParticlesSystem.main.maxParticles];
         ps.maxParticles = (int)(n_mol * 1000);                        //sets the max particles - particle system was starting with too many particles, so reset the max particles when n_mol updates
         particles = new ParticleSystem.Particle[IdealGasParticlesSystem.main.maxParticles];
+        Debug.Log("Particles: "+particles.Length);
         //break the boltzmann distribution into divs number of speed ranges
         divs = 1000;
 
@@ -90,10 +91,12 @@ public class IdealGasSceneMaster : MonoBehaviour {
         //creating NewSlider
         temp_slider = new NewSlider();
         box_slider = new NewSlider();
+        temp_slider.SetWithCallback(25, true);
+        box_slider.SetWithCallback(25, true);
 
         //Add listeners
         //disable input_field input
-        //temp_input.onEndEdit.AddListener(delegate { UpdateTemperature(0); });
+        temp_input.onEndEdit.AddListener(delegate { UpdateTemperature(0); });
         temp_slider.onValueChanged.AddListener(delegate { UpdateTemperature(1); });
         box_slider.onValueChanged.AddListener(delegate { UpdateBoxDimensions(); });
         num_mol_slider.onValueChanged.AddListener(delegate { UpdateNumberParticles(); });
@@ -126,7 +129,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
         }
         //update should continually set the text field/input field values for volume and temperature based upon the slider values
 
-        //Debug.Log(temp_slider.value.ToString("F0"));
+        Debug.Log(temp_slider.value.ToString("F0"));
 
         temp_input.text = temp_slider.value.ToString("F0");
         float l = box_slider.value;
