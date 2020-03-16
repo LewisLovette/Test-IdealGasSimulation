@@ -76,7 +76,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
         temp_input.text = "500";
         //-LL setup
         volume_input.text = "1000";
-        pressure_input.text = "11111";
+        pressure_input.text = CalculatePressure().ToString();
         num_mol_input.text = num_mol_slider.value.ToString("F2");
         particle_mass_input.text = particle_mass_slider.value.ToString("F2");
         //
