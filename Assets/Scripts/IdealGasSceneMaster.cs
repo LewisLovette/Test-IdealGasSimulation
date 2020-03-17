@@ -232,10 +232,10 @@ public class IdealGasSceneMaster : MonoBehaviour {
                 box_slider.SetWithCallback(Mathf.Pow(new_V, (1 / 3f)), false);      //assign the new box dimension - this will call the update volume method
 
                 //now set the new volume and update particles
-                //box.transform.localScale = new Vector3(new_scale, new_scale, new_scale);
+                box.transform.localScale = new Vector3(new_scale, new_scale, new_scale);
                 IdealGasParticlesSystem.Clear();
                 var s = IdealGasParticlesSystem.shape;      //the shape module which should be a box
-                //s.scale = new Vector3(90f * new_scale, 90f * new_scale, 90f * new_scale);  //make the scale 90% of the box size but also multiply by 100
+                s.scale = new Vector3(90f * new_scale, 90f * new_scale, 90f * new_scale);  //make the scale 90% of the box size but also multiply by 100
                 IdealGasParticlesSystem.Emit(N);
                 //reset the particles to the correct speeds
                 SetParticleSpeeds(N, vp);
@@ -308,10 +308,10 @@ public class IdealGasSceneMaster : MonoBehaviour {
         }
 
 
-        //box.transform.localScale = new Vector3(new_scale, new_scale, new_scale);
+        box.transform.localScale = new Vector3(new_scale, new_scale, new_scale);
         IdealGasParticlesSystem.Clear();
         var s = IdealGasParticlesSystem.shape;      //the shape module which should be a box
-        //s.scale = new Vector3(90f * new_scale, 90f * new_scale, 90f * new_scale);  //make the scale 90% of the box size but also multiply by 100
+        s.scale = new Vector3(90f * new_scale, 90f * new_scale, 90f * new_scale);  //make the scale 90% of the box size but also multiply by 100
         IdealGasParticlesSystem.Emit(N);
 
         //reset the particles to the correct speeds - since this is only affecting volume, speeds do not change, so no
@@ -413,7 +413,7 @@ public class IdealGasSceneMaster : MonoBehaviour {
         particles = new ParticleSystem.Particle[IdealGasParticlesSystem.main.maxParticles];
         IdealGasParticlesSystem.Clear();
         var s = IdealGasParticlesSystem.shape;      //the shape module which should be a box
-        //s.scale = new Vector3(90f * new_scale, 90f * new_scale, 90f * new_scale);  //make the scale 90% of the box size but also multiply by 100
+        s.scale = new Vector3(90f * new_scale, 90f * new_scale, 90f * new_scale);  //make the scale 90% of the box size but also multiply by 100
         IdealGasParticlesSystem.Emit(N);        //emit the correct, new number of particles
 
         //set the correct speeds according to maxwell boltzmann
