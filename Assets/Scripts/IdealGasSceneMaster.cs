@@ -117,11 +117,15 @@ public class IdealGasSceneMaster : MonoBehaviour {
         vp_text_pro = vp_text.GetComponent<TextMeshProUGUI>();
         vavg_text_pro = vavg_text.GetComponent<TextMeshProUGUI>();
         vrms_text_pro = vrms_text.GetComponent<TextMeshProUGUI>();
+
+        //test
+        //UpdateTemperature((int)T);
+
     }
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
     //Only
-	void Update () {
+    void Update () {
         //Counting # of particles for debug
         //Debug.Log(count);
         //try a few times to ensure that particle speeds are setup properly, but then stop updating
